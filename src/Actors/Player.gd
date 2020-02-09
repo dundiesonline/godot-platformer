@@ -26,7 +26,6 @@ func calc_move_velocity(
 	new_velocity.x  = speed.x  * direction.x;
 	new_velocity.y += gravity * get_physics_process_delta_time();
 	
-	print(direction.y)
 	if direction.y != 0.0:
 		new_velocity.y = speed.y * direction.y;	
 	if is_jump_interrupted:
