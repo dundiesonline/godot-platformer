@@ -1,5 +1,11 @@
 extends Actor
 
+export var stomp_impulse: = 1000.0;
+
+func _on_EnemyDetector_area_entered(area: Area2D) -> void:
+	_velocity = calc_stomp_velocity(_velocity, stomp_impulse);
+	pass # Replace with function body.
+
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0;
@@ -32,3 +38,9 @@ func calc_move_velocity(
 		new_velocity.y = 0;
 	
 	return new_velocity;
+	
+func calc_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
+	var new_velocity: = linear_velocity;
+	new_velocity.y= -impulse;
+	return new_velocity;
+
