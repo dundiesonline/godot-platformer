@@ -46,4 +46,5 @@ func calc_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 
 	
 func die() -> void:
+	PlayerData.deaths += 1;
 	queue_free();
