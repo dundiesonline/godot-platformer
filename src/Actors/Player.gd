@@ -28,7 +28,6 @@ func calc_move_velocity(
 		is_jump_interrupted: bool
 	) -> Vector2:
 
-	
 	var new_velocity = linear_velocity;
 	new_velocity.x  = speed.x  * direction.x;
 	new_velocity.y += gravity * get_physics_process_delta_time();
