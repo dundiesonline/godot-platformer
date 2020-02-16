@@ -11,8 +11,9 @@ func reset() -> void:
 	deaths = 0;
 
 func set_score(value: int) -> void:
+
 	score = value;
-	emit_signal("score_updated", score);
+	emit_signal("score_updated");
 	
 func set_deaths(value: int) -> void:
 	deaths = value;
